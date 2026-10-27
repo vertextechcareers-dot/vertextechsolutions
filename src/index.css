@@ -1,0 +1,128 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #F7F9FC;
+  --foreground: #13294B;
+  
+  --primary: #1E7FD8;
+  --primary-foreground: #F7F9FC;
+  
+  --secondary: #3DBE5B;
+  --secondary-foreground: #13294B;
+  
+  --muted: #F1F5F9;
+  --muted-foreground: #5B6B82;
+  
+  --accent: #7B4FE0;
+  --accent-foreground: #F7F9FC;
+  
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(1 0 0);
+  
+  --border: #E2E8F0;
+  --input: #E2E8F0;
+  --ring: #1E7FD8;
+  
+  --radius: 0.75rem;
+  
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  
+  /* Brand specific colors */
+  --brand-navy: #13294B;
+  --brand-blue: #1E7FD8;
+  --brand-green: #3DBE5B;
+  --brand-violet: #7B4FE0;
+  --brand-off-white: #F7F9FC;
+  --brand-slate: #5B6B82;
+  
+  /* Gradients */
+  --gradient-blue-green: linear-gradient(135deg, #1E7FD8 0%, #3DBE5B 100%);
+}
+
+.dark {
+  --background: #0B1120;
+  --foreground: #F7F9FC;
+  
+  --primary: #1E7FD8;
+  --primary-foreground: #F7F9FC;
+  
+  --secondary: #3DBE5B;
+  --secondary-foreground: #0B1120;
+  
+  --muted: #1E293B;
+  --muted-foreground: #94A3B8;
+  
+  --accent: #7B4FE0;
+  --accent-foreground: #F7F9FC;
+  
+  --border: #1E293B;
+  --input: #1E293B;
+  --ring: #1E7FD8;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  
+  --color-brand-navy: var(--brand-navy);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-green: var(--brand-green);
+  --color-brand-violet: var(--brand-violet);
+  --color-brand-off-white: var(--brand-off-white);
+  --color-brand-slate: var(--brand-slate);
+
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+  
+  --background-image-blue-green: var(--gradient-blue-green);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    scroll-behavior: smooth;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-blue-green;
+  }
+  
+  .bg-blue-green {
+    background-image: var(--gradient-blue-green);
+  }
+  
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/20;
+  }
+  
+  .dark .glass {
+    @apply bg-brand-navy/70 backdrop-blur-md border border-white/10;
+  }
+}
