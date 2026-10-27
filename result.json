@@ -1,0 +1,4 @@
+{
+    "fragmentTitle": "Original Filename Preservation for Secure File Downloads",
+    "SummaryText": "All code changes are complete and the build passes. Files now download with their original filenames and extensions instead of the stripped admin-entered name. The edge function, upload form, download component, types, and database migration have all been updated. Two manual steps remain: apply the SQL migration (`supabase db push`) and deploy the updated edge function (`supabase functions deploy upload-file`) to make the fix live on the connected Supabase project."
+}
