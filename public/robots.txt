@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+
+# AI answer-engine crawlers are welcome
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://vertextechsolutions-xi.vercel.app/sitemap.xml

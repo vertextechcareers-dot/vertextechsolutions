@@ -29,9 +29,10 @@ const Hero = () => {
               Innovate. Automate. Secure. Grow.
             </span>
             <h1 className="text-5xl md:text-7xl lg:text-8xl text-white mb-6 leading-[0.9] tracking-tighter">
+              <span className="sr-only">Vertex Tech Solutions: </span>
               All-in-one tech <br />
               <span className="text-gradient">solutions</span> for modern <br />
-              businesses.
+              businesses<span className="sr-only"> in Kenya</span>.
             </h1>
             <p className="text-brand-slate text-xl md:text-2xl mb-10 max-w-2xl leading-relaxed">
               We empower businesses with cutting-edge mobile apps, custom web solutions, and AI-driven automation to stay ahead in a digital-first world.

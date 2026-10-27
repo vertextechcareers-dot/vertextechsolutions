@@ -13,6 +13,9 @@ import AdminDashboard from './pages/AdminDashboard';
 import FileDownloads from './components/FileDownloads';
 import AppPrivacyViewer from './components/AppPrivacyViewer';
 import { ConsultationProvider } from './components/ConsultationProvider';
+import AboutSection from './components/AboutSection';
+import FAQ from './components/FAQ';
+import { useSeo } from './hooks/useSeo';
 
 function ScrollToHash() {
   const location = useLocation();
@@ -36,8 +39,10 @@ function ScrollToHash() {
 const Home = () => (
   <>
     <Hero />
+    <AboutSection />
     <WhyVertex />
     <CoreServices />
+    <FAQ />
     <ContactSection />
   </>
 );
@@ -45,6 +50,7 @@ const Home = () => (
 function App() {
   const location = useLocation();
   const isAdmin = location.pathname.startsWith('/admin');
+  useSeo();
 
   return (
     <ConsultationProvider>
